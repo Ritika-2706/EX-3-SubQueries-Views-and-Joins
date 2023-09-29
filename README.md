@@ -1,3 +1,4 @@
+
 # EX 3 SubQueries, Views and Joins 
 
 
@@ -50,7 +51,8 @@ INSERT INTO EMPN (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
 VALUES (7934, 'MILLER', 'CLERK', 7782, TO_DATE('23-JAN-82', 'DD-MON-RR'), 1300, 10, 10);
 ```
 ## Output:
-![Output](exp2-1.png)
+![exp3-1](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/8fe3239e-ddc4-49f0-a15b-ef830db0b41c)
+
 
 ## Create department table
 ```sql
@@ -68,7 +70,8 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 ```
 
 ## Output:
-![Output](exp3-2,png)
+![exp3-2](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/54ab1dd1-8c1a-4c4d-b974-1be3176c6033)
+
 ### Q1) List the name of the employees whose salary is greater than that of employee with empno 7566.
 
 
@@ -79,7 +82,8 @@ select ename from empn where sal>(select sal from empn where empno=7566);
 
 
 ### OUTPUT:
-![Output](exp3-3.png)
+![exp3-3](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/909deaf9-9383-4af4-a3b0-0b6788fceac6)
+
 
 ### Q2) List the ename,job,sal of the employee who get minimum salary in the company.
 
@@ -89,7 +93,8 @@ select ename,job,sal from empn where sal=(select min(sal) from empn);
 ```
 
 ### OUTPUT:
-![Output](exp3-4.png)
+![exp3-4](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/e62c77fa-933a-44a3-8b6e-4d6808189b6e)
+
 
 ### Q3) List ename, job of the employees who work in deptno 10 and his/her job is any one of the job in the department ‘SALES’.
 
@@ -97,7 +102,8 @@ select ename,job,sal from empn where sal=(select min(sal) from empn);
 SELECT ENAME, JOB FROM EMPN WHERE DEPTNO = 10 AND JOB IN (SELECT JOB FROM EMPN WHERE JOB='SALESMAN');
 
 ### OUTPUT:
-![Output](exp3-5.png)
+![exp3-5](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/50f1948f-fd86-4617-a2c6-ce0dfff90bb2)
+
 
 
 ### Q4) Create a view empv5 (for the table emp) that contains empno, ename, job of the employees who work in dept 10.
@@ -109,7 +115,8 @@ select ename,empno,job from emv5;
 ```
 
 ### OUTPUT:
-![Output](exp3-7.png)
+![exp3-7](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/7a7e04e8-7ac3-4178-a80d-5a39640d4883)
+
 
 ### Q5) Create a view with column aliases empv30 that contains empno, ename, sal of the employees who work in dept 30. Also display the contents of the view.
 
@@ -121,7 +128,8 @@ select ename,empno,sal from empv30;
 ```
 
 ### OUTPUT:
-![Output](exp3-6.png)
+![exp3-6](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/2c7595f4-eb7a-409c-94d0-5d01171452f6)
+
 
 ### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
 
@@ -132,7 +140,8 @@ update empv5 set sal=sal+(sal*0.1) where job='clerk';
 
 
 ### OUTPUT:
-![Output](exp3-8.png)
+![exp3-8](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/bd90fbf4-2af3-479b-a0b1-788cda36fa71)
+
 
 ## Create a Customer1 Table
 ```
@@ -151,7 +160,8 @@ INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(
 
 ```
 ## Output:
-![Output](exp3-9.png)
+![exp3-9](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/17bfc4f1-e1de-4bc5-be31-6bd1b86eac9f)
+
 
 
 ## Create a Salesperson1 table
@@ -168,7 +178,8 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5007, 'Paul A
 INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson Hen', 'San Jose', 0.12);
 ```
 ## Output:
-![Output](exp3-10.png)
+![exp3-10](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/e0126541-d6a9-4bbf-8d99-ffb8286680c3)
+
 ### Q7) Write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
 
 ### QUERY:
@@ -177,7 +188,8 @@ SELECT salesman1.name AS "salesman",customer1.cust_name AS "customername", custo
 ```
 
 ### OUTPUT:
-![Output](exp3-11.png)
+![exp3-11](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/15988176-1f6d-4e57-9b22-7abf685edc6f)
+
 ### Q8) Write a SQL query to find salespeople who received commissions of more than 13 percent from the company. Return Customer Name, customer city, Salesman, commission.
 
 
@@ -188,28 +200,32 @@ select customer1.cust_name as "CUSTOMER NAME" , customer1.city as "CUSTOMER CITY
 
 
 ### OUTPUT:
-![Output](exp3-12.png)
+![exp3-12](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/f3b45009-951c-4167-a4ac-42b35acde6fd)
+
 ### Q9) Perform Natural join on both tables
 
 ### QUERY:
  select * from customer1 NATURAL JOIN salesman1;
 
 ### OUTPUT:
-![Output](exp3-13.png)
+![exp3-13](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/90b91a47-4816-49b6-ad87-ff59f9a703ff)
+
 ### Q10) Perform Left and right join on both tables
 ## QUERY FOR LEFT JOIN:
 ```
 select * from salesman1 LEFT JOIN customer1 on salesman1.salesman_id=customer1.salesman_id;
 ```
 ### Output:
-![Output](exp3-14.png)
+![exp3-14](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/28fa2bf1-7298-4557-b345-5bfa4ca37021)
+
 ## QUERY FOR RIGHT JOIN:
 ```
 select * from salesman1 RIGHT JOIN customer1 on salesman1.salesman_id=customer1.salesman_id;
 ```
 
 ### OUTPUT:
-![Output](exp3-15.png)
+![exp3-15](https://github.com/Ritika-2706/EX-3-SubQueries-Views-and-Joins/assets/93427238/1a51af7a-1630-40de-8274-b6b24d1b3165)
+
 
 ### Result:
 The program has been executed successfully for the above queries.
